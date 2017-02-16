@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { MongodbComponent } from './mongodb/mongodb.component';
 import { MongodbService } from './mongodb.service';
 import { ListsComponent } from './lists/lists.component';
-import { StoneDetailComponent } from './stone-detail/stone-detail.component';
 
 // Define the routes
 const ROUTES = [
@@ -21,10 +20,6 @@ const ROUTES = [
   {
     path: 'home',
     component: MongodbComponent
-  },
-  {
-    path: 'homelist',
-    component: ListsComponent
   }
 ];
 
@@ -32,8 +27,7 @@ const ROUTES = [
   declarations: [
     AppComponent,
     MongodbComponent,
-    ListsComponent,
-    StoneDetailComponent
+    ListsComponent
   ],
   imports: [
     BrowserModule,

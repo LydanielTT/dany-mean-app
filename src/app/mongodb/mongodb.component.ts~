@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { MongodbService } from '../mongodb.service';
+
+@Component({
+  selector: 'app-mongodb',
+  templateUrl: './mongodb.component.html',
+  styleUrls: ['./mongodb.component.css']
+})
+export class MongodbComponent implements OnInit {
+
+// instantiate posts to an empty array
+  posts: any = [];
+  
+  constructor(private mongodbService: MongodbService) { }
+
+  ngOnInit() {
+  // Retrieve posts from the API
+    this.mongodbService.getAllPosts().subscribe(posts => {
+      this.posts = posts;
+    });
+  }
+
+}
